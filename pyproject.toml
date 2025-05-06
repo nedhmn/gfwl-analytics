@@ -1,0 +1,26 @@
+[project]
+name = "gfwl-analytics"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "ruff>=0.11.8",
+]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["pipelines/**/*.py", "packages/**/*.py"]
+plugins = ["pydantic.mypy"]
+strict = true
+
+[tool.ruff]
+target-version = "py312"
+include = ["pipelines/**/*.py", "packages/**/*.py"]
+
+[tool.uv]
+cache-dir=".cache"
